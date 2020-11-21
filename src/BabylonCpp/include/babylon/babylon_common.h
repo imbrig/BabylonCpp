@@ -302,8 +302,12 @@ private:
 
 inline std::string babylon_repo_folder()
 {
+#ifdef BABYLON_REPO_FOLDER
   static std::string repo_dir = BABYLON_REPO_FOLDER;
   return repo_dir;
+#else
+  return "";
+#endif
 }
 
 inline std::string assets_folder()
